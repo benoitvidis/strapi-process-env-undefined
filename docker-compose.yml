@@ -1,0 +1,12 @@
+services:
+  strapi:
+    image: node:20-bookworm
+    command: npm run develop
+    user: node
+    working_dir: /home/node/app
+    ports:
+      - "1337:1337"
+    environment:
+      STRAPI_ADMIN_TEST: foobar
+    volumes:
+      - ".:/home/node/app"
